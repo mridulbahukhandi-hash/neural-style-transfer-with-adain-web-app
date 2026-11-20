@@ -682,20 +682,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#"><i class="fas fa-swatchbook me-2"></i>My Art Lab</a>
-        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            </ul>
-            <a href="#" class="btn btn-sm btn-outline-light ms-3 rounded-pill px-4">Sign In</a>
-        </div>
+        <a class="navbar-brand" href="{{ url_for('index') }}"><i class="fas fa-swatchbook me-2"></i>My Art Lab</a>
     </div>
 </nav>
 
@@ -856,7 +843,8 @@
                     </h2>
                     <div id="faqOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            No, we train a model ourselves.
+                            The encoder uses pretrained VGG weights. The decoder
+                            was trained for this project and is loaded for inference.
                         </div>
                     </div>
                 </div>
@@ -921,28 +909,11 @@
                 <p class="mb-4">"Every artist dips his brush in his own soul, and paints his own nature into his pictures."</p>
                 <p class="small" style="color: #bcaea2;">A quiet corner for turning everyday photos into something entirely yours.</p>
             </div>
-            <div class="col-lg-2 col-md-6">
-                <h5>Quick Links</h5>
-                <a href="#" class="footer-link">Home</a>
-                <a href="#" class="footer-link">About Us</a>
-                <a href="#" class="footer-link">Showcase</a>
-                <a href="#" class="footer-link">API Docs</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h5>Contact Us</h5>
-                <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Innovation Dr, Tech City</p>
-                <p class="mb-2"><i class="fas fa-envelope me-2"></i> hello@neuralart.ai</p>
-                <p class="mb-2"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</p>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5>Follow Us</h5>
-                <div class="d-flex mb-3">
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                </div>
-                <p class="small text-muted">Subscribe to our newsletter for the latest updates.</p>
+                <p class="mb-2"><i class="fas fa-envelope me-2"></i>
+                    <a href="mailto:mridulbahukhandi@gmail.com" class="footer-link d-inline">mridulbahukhandi@gmail.com</a>
+                </p>
             </div>
         </div>
         <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">

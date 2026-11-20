@@ -1,10 +1,12 @@
+"""Train the project decoder using the credited AdaIN architecture."""
+
 import argparse
 import torch
 from torch.utils.data import DataLoader
 import torch.optim as optim
 from pathlib import Path
-from utils.utils import *
-from utils.models import *
+from utils.utils import ImageFolderDataset, adaptive_instance_normalization, calc_mean_std, get_transform
+from utils.models import Decoder, VGGEncoder
 from tqdm import tqdm
 from torchvision.utils import save_image
 
@@ -80,14 +82,14 @@ def main():
     style_transform = get_transform(args.style_size, args.crop, args.final_size)
     
     content_dataset = ImageFolderDataset(args.content_dir, content_transform)
-    style_dateset = ImageFolderDataset(args.style_dir, style_transform)
+    style_dataset = ImageFolderDataset(args.style_dir, style_transform)
 
     content_dataloader = DataLoader(content_dataset,
                                     batch_size=args.batch_size,
                                     shuffle = True,
                                     pin_memory=True,
                                     drop_last=True)
-    style_dataloader = DataLoader(style_dateset,
+    style_dataloader = DataLoader(style_dataset,
                                   batch_size=args.batch_size,
                                   shuffle=True,
                                   pin_memory=True,

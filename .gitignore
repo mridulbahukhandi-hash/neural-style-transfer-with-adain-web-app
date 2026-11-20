@@ -6,3 +6,6 @@
 __pycache__/
 **/__pycache__/
 *.pyc
+
+# Local uploads and generated style-transfer results
+NST_Code/static/uploads/*

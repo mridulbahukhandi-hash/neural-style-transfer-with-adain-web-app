@@ -1,3 +1,9 @@
+"""AdaIN encoder and decoder architecture.
+
+The architecture is adapted from naoto0804/pytorch-AdaIN; see the repository
+root's THIRD_PARTY_NOTICES.md for attribution and license information.
+"""
+
 import torch.nn as nn
 import torch
 

@@ -1,3 +1,9 @@
+"""Dataset, preprocessing, and AdaIN utilities.
+
+The AdaIN operation is adapted from naoto0804/pytorch-AdaIN; see the
+repository root's THIRD_PARTY_NOTICES.md for attribution and license details.
+"""
+
 from torch.utils.data import Dataset
 import os
 from PIL import Image
