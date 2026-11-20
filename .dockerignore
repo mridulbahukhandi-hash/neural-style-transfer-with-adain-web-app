@@ -1,0 +1,9 @@
+.git
+.gitignore
+__pycache__
+**/__pycache__
+*.pyc
+NST_Code/content_data
+NST_Code/style_data
+Demo_IO_Images
+NST_Code/static/uploads

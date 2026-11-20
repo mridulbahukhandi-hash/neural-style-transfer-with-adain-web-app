@@ -1,3 +1,12 @@
+---
+title: Neural Style Transfer with AdaIN
+emoji: 🎨
+colorFrom: purple
+colorTo: pink
+sdk: docker
+app_port: 7860
+---
+
 # Neural Style Transfer with AdaIN
 
 A Flask web app that combines a content image with a style reference using
@@ -62,3 +71,14 @@ The demo loads the model into memory when the application starts and is
 intended for single-image experimentation. Production deployments should use
 a suitable upload store, authentication/rate limiting, and a production
 secret key.
+
+## Deploy to Hugging Face Spaces
+
+1. Create a new Space and select **Docker** as the SDK.
+2. Push this repository to the Space.
+3. Add a Space secret named `SECRET_KEY` with a strong random value.
+4. The included `Dockerfile` starts the app on port `7860`.
+
+The Space runs one worker because the model is loaded into memory when the
+application starts. The container excludes training datasets and demo-only
+files; inference weights and web examples remain included.
